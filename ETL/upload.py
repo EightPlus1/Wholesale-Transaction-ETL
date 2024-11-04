@@ -28,8 +28,14 @@ def upload_to_s3(file_name, bucket, object_name=None):
     except Exception as e:
         print(f"Error: {e}")
 
-# 사용 예시
-file_name = ''        # 로컬 파일 경로
-bucket_name = ''   # S3 버킷 이름
-object_name = f'' # S3에 저장될 파일 경로 및 이름 (옵션)
-upload_to_s3(file_name, bucket_name, object_name)
+
+current_directory = os.getcwd() # 현재 경로
+files = os.listdir(current_directory) # 파일 목록 읽기
+csv_files = [file for file in files if file.endswith('.csv')] # 모든 csv파일 이름 리스트
+
+# csv파일 리스트 순회하며 S3적재
+for file in csv_files:
+    file_name = file        # 로컬 파일 경로
+    bucket_name = 'sunjae-test-bucket'   # S3 버킷 이름
+    object_name = f'project/{file_name}' # S3에 저장될 파일 경로 및 이름 (옵션)
+    upload_to_s3(file_name, bucket_name, object_name)
