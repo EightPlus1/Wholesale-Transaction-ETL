@@ -5,7 +5,7 @@ import os
 conn = snowflake.connector.connect(
     user='유저', # 유저 입력
     password='패스워드', # 패스워드 입력
-    account='xgrrapq-prb41357',
+    account='xgrrapq-prb41357', # 다른 계정 사용 시 계졍 변경 필요
     warehouse='COMPUTE_WH',
     database='DEV',
     schema='RAW_DATA'
