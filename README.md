@@ -11,10 +11,10 @@
     2) python3 ./ETL/download_sale_daily.py [일자 8자리] 커맨드 실행
 
 ## 2. 월단위 파일 다운로드 후 S3적재
-- 파일명 : ETL/download_and_S3_put.py
+- 파일명 : ETL/download_and_S3_put_monthly.py
 - 의존 라이브러리 : boto3
 - 실행방법 :
-    1) python3 ./ETL/download_and_S3_put.py [년월 6자리] 커맨드 실행
+    1) python3 ./ETL/download_and_S3_put_monthly.py [년월 6자리] 커맨드 실행
 
 ## 3. snowflake 테이블 생성
 - 파일명 : ETL/load_snowflake.py
