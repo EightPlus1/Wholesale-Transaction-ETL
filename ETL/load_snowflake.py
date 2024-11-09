@@ -19,7 +19,6 @@ if __name__ == '__main__':
     file_name=""  # 파일명 입력
     try:
         with conn.cursor() as cursor:
-            # 원하는 SQL 쿼리 실행
             # 테이블 생성
             cursor.execute(f"""
                            CREATE TABLE dev.raw_data.{table_name} (
@@ -37,12 +36,6 @@ if __name__ == '__main__':
                             FILE_FORMAT = (type='CSV' skip_header=1 FIELD_OPTIONALLY_ENCLOSED_BY='"' NULL_IF = ('', 'NULL'));
                            """)
             
-            # 결과를 모두 가져오기
-            # results = cursor.fetchall()
-            
-            # # 결과 출력
-            # for row in results:
-            #     print(row)
 
     finally:
         # 연결 종료

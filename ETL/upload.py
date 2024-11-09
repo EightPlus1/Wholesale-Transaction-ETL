@@ -39,3 +39,6 @@ for file in csv_files:
     bucket_name = 'sunjae-test-bucket'   # S3 버킷 이름
     object_name = f'project/{file_name}' # S3에 저장될 파일 경로 및 이름 (옵션)
     upload_to_s3(file_name, bucket_name, object_name)
+
+
+
